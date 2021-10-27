@@ -142,6 +142,15 @@ async function bundle() {
       },
     },
     {
+      title: 'Copy README',
+      task: async () => {
+        await util.promisify(fs.copyFile)(
+          path.join(__dirname, 'README.md'),
+          path.join(__dirname, 'dist', 'README.md'),
+        );
+      },
+    },
+    {
       title: 'Copy LICENSE',
       task: async () => {
         await util.promisify(fs.copyFile)(
