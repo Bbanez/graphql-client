@@ -1,5 +1,7 @@
 # GraphQL Client
 
+[![NPM Version][npm-image]][npm-url]
+
 This project is a simple and easy GraphQL client based on project created by [nordsimon](https://github.com/nordsimon/graphql-client). Is far as I was able to see this package is not maintained any more and it does not provide types. Since I personally liked it for its simplicity, small footprint and ease of use, I decided to refactor it and move it to typescript. I hope that you will find it useful.
 
 ## Usage
@@ -30,3 +32,5 @@ const result = await graphql<{
 
 console.log(result);
 ```
+
+[npm-url]: https://npmjs.org/package/@banez/graphql-client
