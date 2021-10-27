@@ -33,4 +33,5 @@ const result = await graphql<{
 console.log(result);
 ```
 
+[npm-image]: https://img.shields.io/npm/v/@banez/graphql-client.svg
 [npm-url]: https://npmjs.org/package/@banez/graphql-client
