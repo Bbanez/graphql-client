@@ -57,24 +57,24 @@ export function createGraphQLClient(params: {
   if (!params.url) {
     throw new Error('Missing url parameter');
   }
-  const headers = new Headers(params.headers || {});
-  headers.append('Content-Type', 'application/json');
+  if (!params.headers) {
+    params.headers = {};
+  }
+  params.headers['Content-Type'] = 'application/json';
 
-  return async (query, variables, onResponse) => {
-    const req = new Request(params.url, {
+  return async (query, variables) => {
+    const res = await fetch(params.url, {
       method: 'POST',
       body: JSON.stringify({
         query: query,
         variables: variables,
       }),
-      headers: headers,
+      headers: params.headers,
       credentials: params.credentials,
     });
-
-    const res = await fetch(req);
-    if (onResponse) {
-      onResponse(req, res);
-    }
+    // if (onResponse) {
+    //   onResponse(req, res);
+    // }
     const body = await res.json();
     if (body.errors && body.errors.length) {
       body.highlightQuery = highlightQuery(query, body.errors);
