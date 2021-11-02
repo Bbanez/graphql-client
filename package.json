@@ -1,6 +1,6 @@
 {
   "name": "@banez/graphql-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple and easy GraphQL client.",
   "author": "nordsimon - Refactored by Branislav Vajagic",
   "license": "MIT",
