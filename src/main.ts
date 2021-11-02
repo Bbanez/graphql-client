@@ -76,7 +76,7 @@ export function createGraphQLClient(params: {
     //   onResponse(req, res);
     // }
     const body = await res.json();
-    if (body.errors && body.errors.length) {
+    if (body.errors && body.errors instanceof Array && body.errors.length) {
       body.highlightQuery = highlightQuery(query, body.errors);
     }
     return body;
